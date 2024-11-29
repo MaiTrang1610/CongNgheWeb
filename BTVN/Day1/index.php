@@ -8,11 +8,9 @@ if (!isset($_SESSION['products'])) {
 }
 
 if (isset($_GET['delete'])) {
-    // gán biến bằng index delete ở url
     $deleteIndex = $_GET['delete']; 
     if (isset($_SESSION['products'][$deleteIndex])) {
         unset($_SESSION['products'][$deleteIndex]); 
-        // Đặt lại số thứ tự sau khi xoá
         $_SESSION['products'] = array_values($_SESSION['products']); 
     }
     header('Location: index.php');
@@ -27,14 +25,12 @@ if (isset($_GET['reset']) && $_GET['reset'] == 'true') {
 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // kiểm tra đã có được khai báo chưa và có null hay không
     if (isset($_POST['name']) && isset($_POST['price'])) {
-        // tạo mảng newproduct để gán key và value
         $newProduct = [
             'name' => htmlspecialchars($_POST['name']),
             'price' => htmlspecialchars($_POST['price']),
         ];
-        $_SESSION['products'][] = $newProduct;  
+        $_SESSION['products'][] = $newProduct;
         header('Location: index.php');
         exit();
     }

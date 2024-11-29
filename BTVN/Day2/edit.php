@@ -30,21 +30,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <?php include 'header.php'; ?>
 
-
-<div class="container">
-    <h2>Sửa sản phẩm</h2>
-    <form method="POST">
-        <div class="form-group">
-            <label for="name">Tên sản phẩm:</label>
-            <input type="text" name="name" id="name" value="<?= htmlspecialchars($productToEdit['name']) ?>" required>
-        </div>
-        <div class="form-group">
-            <label for="price">Giá thành:</label>
-            <input type="text" name="price" id="price" value="<?= htmlspecialchars($productToEdit['price']) ?>" required>
-        </div>
-        <button type="submit" class="btn btn-primary">Cập nhật</button>
-    </form>
-</div>
-
+<main>
+    <div class="container">
+        <h2>Sửa sản phẩm</h2>
+        <form method="POST">
+            <div class="form-group">
+                <label for="name">Tên sản phẩm:</label>
+                <input type="text" name="name" id="name" value="<?= htmlspecialchars($productToEdit['name']) ?>" required>
+            </div>
+            <div class="form-group">
+                <label for="price">Giá thành:</label>
+                <input type="text" name="price" id="price" value="<?= htmlspecialchars($productToEdit['price']) ?>" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Cập nhật</button>
+        </form>
+    </div>
+</main>
 
 <?php include 'footer.php'; ?>
